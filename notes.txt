@@ -1,0 +1,17 @@
+this can be used to create variables in css
+:root{
+    --size-box = 250px;
+}   
+.box{
+width: (--size-box);
+}
+
+
+LEARN BOX SIZING
+content-box is the total of the content size so the total will be 250 + the other stuff. 
+the border-box will set the total size as 250 so content could be 210
+
+position fixed will basically take that child element out of that parent divs and fix it on the screen
+position absolute on the child means that the position will move acording to its parent element. 
+
+@media query 
