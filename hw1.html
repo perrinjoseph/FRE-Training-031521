@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            position: relative;
+            margin: auto;
+            width: 55%;
+            padding: 25px;
+            font-size: 15px;
+        }
+
+        #title {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .long {
+            width: 93%;
+        }
+
+        .agr {
+            position: absolute;
+            left: 0 px;
+            padding: 70px 0;
+            float: left;
+            text-align: left;
+            margin-left: 0%;
+        }
+
+        .cli {
+            margin-right: 0%;
+            font-size: 15px;
+        }
+
+        .table {
+            table-layout: auto;
+            font-size: 10px;
+            padding: 0px;
+        }
+
+        th,
+        td {
+            padding: 0px;
+            text-align: left;
+        }
+
+        input {
+            width: 200px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        #button1 {
+            background: blue;
+            color: white;
+        }
+
+        #button2 {
+            background: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Sign Up</h1>
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <br>
+    <input type="text" class="long" placeholder="Mobile No.">
+    <br>
+    <input type="text" class="long" placeholder="Email Address">
+    <br>
+    <input type="text" placeholder="Passworde">
+    <input type="text" placeholder="Confirm Password">
+    <br>
+    <table class="table">
+        <tr>
+            <th>
+                <input type="checkbox" class="agr"> I Agree</input>
+            </th>
+            <th>
+                <t class="cli">By clicking Register you agree to the Trems and Conditions set out by this site,
+                    including
+                    our Cookie
+                    Use.</t>
+            </th>
+        </tr>
+    </table>
+    <input type="submit" value="Register" id="button1">
+    <input type="submit" value="Sign In" id="button2">
+
+</body>
+
+</html>
