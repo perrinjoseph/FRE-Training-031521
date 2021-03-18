@@ -15,3 +15,4 @@ position fixed will basically take that child element out of that parent divs an
 position absolute on the child means that the position will move acording to its parent element. 
 
 @media query 
+Css Done. 
