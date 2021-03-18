@@ -1,18 +1,57 @@
-this can be used to create variables in css
-:root{
-    --size-box = 250px;
-}   
-.box{
-width: (--size-box);
+# ----------------------------------- NOTES ---------------------------------- #
+✅ HTML CSS NOTES
+{
+    
+    this can be used to create variables in css
+    :root{
+        --size-box = 250px;
+    }   
+    .box{
+    width: (--size-box);
+    }
+
+    LEARN BOX SIZING
+    content-box is the total of the content size so the total will be 250 + the other stuff. 
+    the border-box will set the total size as 250 so content could be 210
+
+    position fixed will basically take that child element out of that parent divs and fix it on the screen
+    position absolute on the child means that the position will move acording to its parent element. 
+
+    @media query 
+    Css Done. 
+
+    BEM
+    block element modifier
+
+    id has higher priority over class selector
+
+    difference between input type= button ?
+    and button tag is that the input tag is something called self closed you cannot put anything in between the input tag
+    in a button tag you can put stuff in between it. 
+
+    difference between type submit and type button?
+    type submit will trigger the form on submit event. then it wont refresh the page. 
+    SPA Single page application
+
+    Use electron to build destop applications.
+    * universal selector
+    ::before is a pseduoselector
+    css reset is done to reset default and make sure it behaves the same in all browsers and to make sure you can create your own default
+    We use *::before, *::after because the universal selector does not select upseudo elements. 
+    html{
+         if you want to ser the root font size you can use 
+         font-size: 62.25% // this is 10px which is 16px * 62.25% the reason why we are using percentage is because 
+         it can be used to scale for 508 compliance if you use 10px it overrites it and does back to default.
+    }
+    this basically changes the now you can use rem.
+    this way 1 will be 
+
+
+    margin auto helps center horizontally ONLY!
+    flexbox is for 1 dimentional layout. It is more popular and is supported on almost all browsers and all mobile devices
+    css grind is for 2 dimentinoal layout. Now very popular and isnt supported of few browsers
+    flex-wrap can be used to send things to another line
+
+    media query you can say flex- direction to column.
+
 }
-
-
-LEARN BOX SIZING
-content-box is the total of the content size so the total will be 250 + the other stuff. 
-the border-box will set the total size as 250 so content could be 210
-
-position fixed will basically take that child element out of that parent divs and fix it on the screen
-position absolute on the child means that the position will move acording to its parent element. 
-
-@media query 
-Css Done. 
