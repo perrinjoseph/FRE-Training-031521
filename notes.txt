@@ -1,7 +1,6 @@
 # ----------------------------------- NOTES ---------------------------------- #
 ✅ HTML CSS NOTES
 {
-    
     this can be used to create variables in css
     :root{
         --size-box = 250px;
@@ -54,4 +53,13 @@
 
     media query you can say flex- direction to column.
 
+    Header/nav bar
+    for nav bar all you have to do is set the 
+    position: sticky;
+    top: 0;
+    when you say sticky you have to give it top 0
+
+    FOOTER
+    for  footer make it fixed and set bottom:0
+    then when the page shrinks to make it responsive re set the position to relative because the content will go behind the footer because it is fixed so do this.
 }
