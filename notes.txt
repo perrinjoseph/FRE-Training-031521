@@ -63,3 +63,7 @@
     for  footer make it fixed and set bottom:0
     then when the page shrinks to make it responsive re set the position to relative because the content will go behind the footer because it is fixed so do this.
 }
+
+{
+    
+}
