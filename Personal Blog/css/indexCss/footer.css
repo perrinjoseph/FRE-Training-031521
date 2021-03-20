@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  background-color: var(--color-font);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  height: 180px;
+  align-items: center;
+  position: relative;
+  color: white;
+  font-size: 0.7rem;
+}
+.message {
+  color: white;
+}
+.footer__center > ul > li {
+  list-style-type: none;
+}

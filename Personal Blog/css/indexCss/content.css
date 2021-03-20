@@ -1,0 +1,61 @@
+.live {
+  color: rgb(252, 59, 59);
+}
+
+.content {
+  margin: auto;
+  width: 80%;
+}
+
+h1 {
+  margin: 80px 0px;
+  font-size: 4rem;
+  color: var(--color-font);
+}
+
+p {
+  color: rgb(105, 103, 103);
+}
+
+.grid {
+  display: grid;
+  margin: 80px;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.grid > article {
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.grid > article > img {
+  width: 100%;
+  min-width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+}
+.card__info {
+  margin: 15px;
+}
+.card__info > h2 {
+  color: var(--color-font);
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+button:hover {
+  background-color: rgb(140, 231, 208);
+}

@@ -1,0 +1,36 @@
+.content__post{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    margin: 60px 0px;
+    border-radius: 30px;
+}
+
+.post__left__title{
+    font-size: 4rem;
+    font-weight: bolder;
+}
+.post__left{
+    padding: 35px;
+    flex: 0.8;
+}
+.post__right{
+    padding: 35px;
+    flex: 0.2;
+}
+.date{
+    color: rgb(153, 153, 153);
+}
+.post__intro{
+    margin-top: 30px;
+}
+
+.socials{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.socials >img{
+    object-fit: contain;
+    height: 40px;
+}

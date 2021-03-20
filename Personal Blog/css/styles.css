@@ -1,0 +1,41 @@
+@import "./indexCss/navigation.css";
+@import "./indexCss/content.css";
+@import "./indexCss/footer.css";
+@import "./postCss/header.css";
+@import "./postCss/bio.css";
+@import "./postCss/post.css";
+
+:root {
+  --color-font: rgb(53, 53, 53);
+  --color-primary: rgb(252, 59, 59);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  font-family: Helvetica;
+}
+
+@media (max-width: 788px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1232px) {
+  .content__post{
+    flex-direction: column-reverse;
+    
+  }
+  .socials{
+    justify-content: start;
+  }
+  .socials >img{
+    margin: 0px 10px ;
+  }
+}

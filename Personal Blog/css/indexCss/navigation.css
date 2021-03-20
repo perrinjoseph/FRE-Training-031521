@@ -1,0 +1,44 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  padding: 20px 20px;
+  top: 0;
+  background-color: white;
+}
+.navigation__left {
+  display: flex;
+}
+
+.items {
+  display: flex;
+}
+.items > li {
+  display: flex;
+  padding: 0px 20px;
+  align-items: center;
+}
+.items > li > a {
+  color: var(--color-font);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.logo {
+  margin-right: 20px;
+  object-fit: contain;
+  height: 40px;
+  filter: drop-shadow(3px 2mm 10px rgba(220, 20, 60, 0.575));
+}
+
+.navigation__search {
+  margin: auto;
+}
+.navigation__search > input {
+  border: none;
+  outline: none;
+  background-color: rgb(235, 235, 235);
+  padding: 10px;
+  border-radius: 30px;
+  width: 250px;
+}

@@ -1,0 +1,16 @@
+.content__bio{
+    margin: 10px 0px;
+    padding: 40px 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+.content__bio__inner{
+    position: absolute;
+}
+
+.content__bio__inner> h2{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
