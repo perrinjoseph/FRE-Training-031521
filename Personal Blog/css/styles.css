@@ -38,3 +38,9 @@
     margin: 0px 10px;
   }
 }
+
+@media(max-width:577px){
+  .content{
+    width: 95%;
+  }
+}
