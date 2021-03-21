@@ -47,6 +47,7 @@ p {
   margin-bottom: 10px;
 }
 
+
 button {
   margin-top: 20px;
   border: none;
@@ -54,8 +55,11 @@ button {
   border-radius: 20px;
   outline: none;
   cursor: pointer;
-  transition: 200ms;
+  transition: 200ms ease-in-out;
+  color: rgb(104, 104, 104);
 }
 button:hover {
-  background-color: rgb(140, 231, 208);
+  color: white;
+  transform: scale(1.1);
+  background-color: rgb(167, 167, 167) ;
 }

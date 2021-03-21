@@ -22,20 +22,19 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .footer {
-    flex-direction: column;
+  .footer__grid{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media (max-width: 1232px) {
-  .content__post{
+  .content__post {
     flex-direction: column-reverse;
-    
   }
-  .socials{
+  .socials {
     justify-content: start;
   }
-  .socials >img{
-    margin: 0px 10px ;
+  .socials > img {
+    margin: 0px 10px;
   }
 }
