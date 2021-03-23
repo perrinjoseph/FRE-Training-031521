@@ -1,8 +1,7 @@
 //Assignment 3 JavaScript
 'use strict';
 
-/* ----------------------------- Question 1 ----------------------------- */
-
+// Question 1
 function reverseNumber(number){
     if(!Number.isInteger(number) || !number )throw new Error("Error 🔴: Input should be a number");
     const strNumber = ''+number;
@@ -11,8 +10,7 @@ function reverseNumber(number){
 console.log(reverseNumber(1122));
 
 
-/* ----------------------------- Question 2 ----------------------------- */
-
+// Question 2
 /**Assumtions made: Since no specificity is mentioned about the type of palindromes, i.e. plindromic number or alphabet palindrome, 
 we will be using palindrome by String but the string can also contain other characters. Palindromes are also not case sensitive. 
 */
@@ -24,12 +22,11 @@ const palindrome = function(palindrome){
 console.log(palindrome("PeEreep"))
 
 
-/* ----------------------------- Question 3 ----------------------------- */
-
+// Question 3
 const combination = function(input){
     if(!input || typeof input!='string')throw new Error("Error 🔴: Input should be a String");
     let combinations =[];
-    // This line of code will remove spaces. But not mentioned in requirements. 
+    // This line of code will remove spaces. But not mentioned in re// Quirements. 
     // let ref = input.replace(/ /g,"");
     combinations.push(input);
     input.split("").forEach((el,index,arr)=>{
@@ -43,8 +40,7 @@ const combination = function(input){
 console.log(combination("Dog"))
 
 
-/* ----------------------------- Question 4 ----------------------------- */
-
+// Question 4
 const reOrder = function(input){
     if(!input || typeof input!='string')throw new Error("Error 🔴: Input should be a String");
     return input.split("").sort().join("");
@@ -52,8 +48,7 @@ const reOrder = function(input){
 console.log(reOrder("zdsrr"))
 
 
-/* ----------------------------- Question 5 ----------------------------- */
-
+// Question 5
 const upperCaseCreater = function(input){
     if(!input || typeof input!='string')throw new Error("Error 🔴: Input should be a String");
     return input.split(" ").map((el,index,arr)=>{
@@ -66,8 +61,7 @@ const upperCaseCreater = function(input){
 console.log(upperCaseCreater("aasdf hey comon"));
 
 
-/* ----------------------------- Question 6 ----------------------------- */
-
+// Question 6
 const longestWord = function(input){
     if(!input || typeof input!='string')throw new Error("Error 🔴: Input should be a String");
     const lengthMap = new Map();
@@ -77,8 +71,7 @@ const longestWord = function(input){
 console.log(longestWord("Web Development Toutorial"));
 
 
-/* ------------------------------- Question 7 ------------------------------- */
-
+// Question 7 
 const numberVowels = function(input){
     if(!input || typeof input!='string')throw new Error("Error 🔴: Input should be a String");
     return[...input].filter(value=>'aeiou'.includes(value.toLowerCase())).length
@@ -86,8 +79,7 @@ const numberVowels = function(input){
 console.log(numberVowels("aeyytwhw"));
 
 
-/* ------------------------------- Question 8 ------------------------------- */
-
+ // Question 8
 const isPrime = function(num){
     if(!Number.isInteger(num))throw new Error("Error 🔴: Input should be an Integer value")
     if(num<2)return `${num} is not a prime number`;
@@ -99,12 +91,11 @@ const isPrime = function(num){
 console.log(isPrime(13));
 
 
-/* ------------------------------- Question 9 ------------------------------- */
-
+// Question 9 
 const getType = (input)=>typeof input;
 console.log(getType(null));
 
 
-/* ------------------------------- Question 10 ------------------------------ */
+// Question 10 
 
 

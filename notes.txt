@@ -1,5 +1,5 @@
 # ----------------------------------- NOTES ---------------------------------- #
-✅ HTML CSS NOTES
+✅  HTML CSS NOTES
 {
     this can be used to create variables in css
     :root{
@@ -64,6 +64,16 @@
     then when the page shrinks to make it responsive re set the position to relative because the content will go behind the footer because it is fixed so do this.
 }
 
+✅  JavaScript Basics
 {
-    
-}
+    Web 2.0 Ajax
+    //javascript = ES + browser API(because it is running by the browser is a document API which can be used by JS but not NodeJs)
+    ES is the standard. 
+    Node js is similar to ES  but it used NodeApi files, pathsetc which cannot be used by JS
+    ducument is part of browser API so nodejs wont be able to acces it.
+    primitive is just the value not the reverence to the memory location(reference).
+
+    var is hoisted to the start of the function scope. let and const also does hoisting but the thing 
+    is they it is hoisted to the block and it CANNOT be accessed before initialization.
+    === DO RESEARCH
+}   
