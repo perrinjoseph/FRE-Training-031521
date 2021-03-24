@@ -204,5 +204,79 @@ const convertToCoins = function(amt,coins){
     return arrCoins;
     throw new Error("Error 🔴: The coins provided cannot add up to get the desired amt");
 }
-console.log(convertToCoins(55,[10,5]));
+console.log(convertToCoins(55,[33,10,1]));
 
+
+// Question 15
+//ignoring Abstraction for this question because the question wanted only one function that performs the operations. To use abstraction I would create
+//another helper function that will be within a while loop and if the returned value is false i will loop again until the user gives the correct details.
+// const exponentCalculator = function(){
+//     let base = prompt("Enter the Base");
+//     base = +base;
+//     while(isNaN(base) || !base){
+//         alert("Error 🔴: Base has to be a number")
+//         base = prompt("Enter the Base");
+//         base = +base;
+//     }
+//     let exponent = prompt("Enter the Exponent");
+//     exponent = +exponent;
+//     while(isNaN(exponent) || !exponent){
+//         alert("Error 🔴: Exponent has to be a number")
+//         exponent = prompt("Enter the Exponent");
+//         exponent = +exponent;
+//     }
+//     return base ** exponent;    
+// }
+
+// console.log(exponentCalculator());
+
+
+//Question 16 
+const uniqueString = function(input){
+    if(!input || typeof input!='string')throw new Error("Error 🔴: Input should be a String");
+    let uniqueSet = new Set();
+    const uniqueString = [...input].map(val=>{
+        uniqueSet.add(val);
+    })
+    const a=[...uniqueSet].join("");
+    return a;
+}
+console.log(uniqueString("thequickbrownfoxjumpsoverthelazydog"));
+
+
+//Question 17
+const numberOfChar = function(input){
+    if(!input || typeof input !='string')throw new Error("Error 🔴: Input should be a String");
+    let charSet = new Set([...input]);
+    let output = {};
+    [...charSet]
+    .forEach((val,index,array)=>{
+        let occurence =[...input]
+        .filter((el,i,arr)=>el.toLowerCase()==val.toLowerCase())
+        .length
+        output[val.toLowerCase()]=occurence;
+    })
+    return output;
+}
+console.log(numberOfChar("PerRin"));
+
+
+// Question 18
+const binarySearch = function(target,array){
+    if(!target || !array )
+    throw new Error("Error 🔴: Invalid Input");
+
+    let validArray= array.filter(Boolean);
+    if(!(array.every(val=>typeof val ==='number')) || typeof target!='number')
+    throw new Error("Error 🔴: Invalid Input");
+    
+    validArray.sort((a,b)=>a-b);
+    let low=0;
+    let mid =0;
+    let high=array.length-1;
+    while(low<=high){
+        
+    }
+
+}
+console.log(binarySearch(23,[23,3,5,6,54,676,456,7,89]));
