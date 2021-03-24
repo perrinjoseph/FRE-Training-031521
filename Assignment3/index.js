@@ -269,14 +269,26 @@ const binarySearch = function(target,array){
     let validArray= array.filter(Boolean);
     if(!(array.every(val=>typeof val ==='number')) || typeof target!='number')
     throw new Error("Error 🔴: Invalid Input");
-    
+
     validArray.sort((a,b)=>a-b);
     let low=0;
-    let mid =0;
+    let middle =0;
     let high=array.length-1;
     while(low<=high){
+        middle = Math.floor((low+high)/2);
+        if(target ==validArray[middle])
+            return true;
         
+        if(target>array[middle]){
+            low = middle +1;
+        }
+        
+        if(target<=array[middle])
+            high=middle-1;
     }
-
+    return false;
 }
 console.log(binarySearch(23,[23,3,5,6,54,676,456,7,89]));
+
+
+//Question 19
