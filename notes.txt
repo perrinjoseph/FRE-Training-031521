@@ -77,3 +77,10 @@
     is they it is hoisted to the block and it CANNOT be accessed before initialization.
     === DO RESEARCH
 }   
+
+✅  JavaScript Advance
+{
+    No overloading in JS classes only over writing so that means the last class with the same name will be invoked. 
+}   
+
+
