@@ -210,25 +210,24 @@ console.log(convertToCoins(55,[33,10,1]));
 // Question 15
 //ignoring Abstraction for this question because the question wanted only one function that performs the operations. To use abstraction I would create
 //another helper function that will be within a while loop and if the returned value is false i will loop again until the user gives the correct details.
-// const exponentCalculator = function(){
-//     let base = prompt("Enter the Base");
-//     base = +base;
-//     while(isNaN(base) || !base){
-//         alert("Error 🔴: Base has to be a number")
-//         base = prompt("Enter the Base");
-//         base = +base;
-//     }
-//     let exponent = prompt("Enter the Exponent");
-//     exponent = +exponent;
-//     while(isNaN(exponent) || !exponent){
-//         alert("Error 🔴: Exponent has to be a number")
-//         exponent = prompt("Enter the Exponent");
-//         exponent = +exponent;
-//     }
-//     return base ** exponent;    
-// }
-
-// console.log(exponentCalculator());
+const exponentCalculator = function(){
+    let base = prompt("Enter the Base");
+    base = +base;
+    while(isNaN(base) || !base){
+        alert("Error 🔴: Base has to be a number")
+        base = prompt("Enter the Base");
+        base = +base;
+    }
+    let exponent = prompt("Enter the Exponent");
+    exponent = +exponent;
+    while(isNaN(exponent) || !exponent){
+        alert("Error 🔴: Exponent has to be a number")
+        exponent = prompt("Enter the Exponent");
+        exponent = +exponent;
+    }
+    return base ** exponent;    
+}
+console.log(exponentCalculator());
 
 
 //Question 16 
@@ -263,12 +262,12 @@ console.log(numberOfChar("PerRin"));
 
 // Question 18
 const binarySearch = function(target,array){
-    if(!target || !array )
+    if(target<0 || !array )
     throw new Error("Error 🔴: Invalid Input");
 
-    let validArray= array.filter(Boolean);
-    if(!(array.every(val=>typeof val ==='number')) || typeof target!='number')
-    throw new Error("Error 🔴: Invalid Input");
+    let validArray= array.filter(el=>el>=0);
+    if(!(validArray.every(val=>typeof val ==='number')) || typeof target!='number')
+    throw new Error("Error 🔴: Invalid");
 
     validArray.sort((a,b)=>a-b);
     let low=0;
@@ -288,7 +287,203 @@ const binarySearch = function(target,array){
     }
     return false;
 }
-console.log(binarySearch(23,[23,3,5,6,54,676,456,7,89]));
+console.log(binarySearch(0,[0,23,3,5,6,54,676,456,7,89]));
 
 
 //Question 19
+const elements = function(arr,target){
+    if(target<0 || !arr ||arr.length==0)
+    throw new Error("Error 🔴: Invalid Input");
+
+    let validArray= arr.filter(el=>el>=0);
+    if(!(validArray.every(val=>typeof val ==='number')) || typeof target!='number')
+    throw new Error("Error 🔴: Invalid Input");
+
+    return arr.filter(el=>el>target);
+    console.log(validArray);
+}
+console.log(elements([1,33,44,55],34));
+
+
+//Question 20
+const randomId = function(n){
+    if(!Number.isInteger(n) || !n )throw new Error("Error 🔴: Input should be a number")
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let output = '';
+    for(let x = 0; x<n; x++)
+    {
+        output+=chars.charAt(Math.floor(Math.random() * chars.length-1))
+    }
+    return output;
+}
+console.log(randomId(15));
+
+
+//Question 21
+const subSets= function (array,n){
+    const output = [[]] 
+    array.forEach((el,index,array)=>{
+        const outputLength = output.length;
+        for(let i = 0; i<outputLength;i++){
+            let tempArr = output[i].slice(0)
+            output.push(tempArr);
+            tempArr.push(el);
+        }
+    })
+    return output.filter(el=>el.length === n);
+}
+console.log(subSets([1,2,3],2))
+
+
+//Question 22
+const countOccurrences = function(search,target){
+    if(!target || typeof target !='string' || target.length>1)
+    throw new Error("Error 🔴: The target should only be one letter");
+    
+    if(!search || typeof search !='string')
+    throw new Error("Error 🔴: Search String should be a String");
+    return [...search].filter(val=>val===target).length;
+}
+
+console.log(countOccurrences("aaaasd","a"));
+
+
+//Question 23
+const firstNonRepeatingChar = function(input){
+    if(!input || typeof input !='string')
+    throw new Error("Error 🔴: Input should be a String");
+
+    const inputArr = [...input]
+    const aSet = new Set(inputArr)
+    let aMap = new Map();
+    [...aSet]
+    .forEach((val,index,array)=>{
+        let occurence =inputArr
+        .filter((el,i,arr)=>el.toLowerCase()==val.toLowerCase())
+        .length
+        aMap.set(val.toLowerCase(),occurence)
+    })
+    const output = [...aMap].filter(e=>e[1]===1)[0]
+    return output?output[0]:-1;
+}
+console.log(firstNonRepeatingChar("aabbssfffr"));
+
+
+//Question 24
+const bubbleSort = function(array){
+    if(!array || !(array.every(e=>typeof e ==='number')) || array.length===0)
+    throw new Error("Error 🔴: Input should be an array of numbers only");
+
+    let high = array.length;
+    for(let x=0; x<high;x++){
+        for(let i=0;i<high-x-1;i++){
+            if(array[i]>array[i+1]){
+                let temp = array[i];
+                array[i]=array[i+1];
+                array[i+1]=temp;
+            }
+        }
+    }
+    return array.sort((a,b)=>b-a)
+}
+console.log(bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]))
+
+
+
+//Question 25
+const longestCountryName = function(array){
+    if(!array || !(array.every(el=>typeof el ==='string')) || array.length===0)
+    throw new Error("Error 🔴: Input should be an array of Strings only");
+
+    const aSet = new Set([...array]);
+    const aMap = new Map();
+    [...aSet].forEach(el=>{
+        aMap.set(el,el.length);
+    })
+    const comparison = [...aMap].sort((a,b)=>b[1]-a[1])[0][1]
+    return [...aMap].filter(el=>el[1]===comparison).map(el=>el[0]).join(', ')
+}
+console.log(longestCountryName(["Africa","United Aram Emirates","United States Of Am"]));
+
+
+
+//Question 26
+const highestUniqueSubString = function(input)
+{
+    if(!input || typeof input !='string')
+    throw new Error("Error 🔴: Input should be a String");
+    const arrInput=[...input];
+    let output="";
+    let str="";
+    for(let j=0;j<arrInput.length;j++){
+        for(let i=j;i<arrInput.length;i++){
+            if(str.includes(arrInput[i])){
+                break;
+            }
+            else{
+                str+=arrInput[i];
+            }
+         }
+        if(output.length<str.length)
+            output=str;
+        str="";
+    }
+    return output;
+}
+console.log(highestUniqueSubString("wherrdopwsa"));
+
+
+
+//Question 27
+const longestPalindrome = function (input){
+    let longestPalendrome = '';
+    [...input].forEach((val,i,arr)=>{
+        let first;
+        for (let x = i + 1; x < input.length; x++){
+          if (val === input[x]){
+            first = x;
+            let sub = input.slice(i, first + 1);
+            if (sub.length > longestPalendrome.length && sub.toLowerCase() === sub
+            .split('')
+            .reverse()
+            .join('')
+            .toLowerCase()) {
+                  longestPalendrome = sub;
+            }
+          }
+        }
+    })
+    return longestPalendrome;
+  };
+  console.log(longestPalindrome("aspaap"))
+
+
+// Question 28
+function inviteGuest(name,award,callback){
+    if(!name || typeof name !='string')
+    throw new Error("Error 🔴: Input should be a String");
+
+    if(!award || typeof award !='string')
+    throw new Error("Error 🔴: Input should be a String");
+
+    if(!callback || !(typeof callback ==='function'))
+    throw new Error("Error 🔴: Input should be a function");
+
+    console.log("Welcome to the Annual Prize Day");
+    callback(name,award);
+}
+
+function giveAward(name,award){
+    console.log(`The ${award} Award Goes To....${name}!! Great Job!`);
+}
+inviteGuest("Perrin","Best React Developer",giveAward);
+
+
+//Question 29
+const getFunctionName = function(f){
+    if(!f || !(typeof f ==='function'))
+    throw new Error("Error 🔴: Input should be a function");
+    
+    return f.name?f.name:"Function is annonymous it does not have a name "
+}
+console.log(getFunctionName(()=>{}));
