@@ -42,6 +42,7 @@ myFetch('https://jsonplaceholder.typicode.com/todos', {
 .then(data=>console.log(data))
 .catch(error=>console.log(error.error))
 
+
 //Get request
 myFetch('https://jsonplaceholder.typicode.com/posts/4')
 .then((response) => response.json())
