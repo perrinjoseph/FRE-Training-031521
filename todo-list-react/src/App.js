@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Create from './Components/Create';
+import Header from './Components/Header';
+import Task from './Components/Task';
+
+
 
 function App() {
+  //BEM 
+  const [tasks,setTasks] = useState([]);
+  const [deleted,setDelete]=useState("")
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users/1/todos')
+    .then((response) => response.json())
+    .then((json) => setTasks(json));
+    
+  },[deleted])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+        <Header />
+      <div className="container">
+        <Create/>
+        <div className="grid">
+         {tasks.map((el)=>(
+           <Task user={el.userId} title={el.title} completed={el.completed} key={el.id}/>
+         ))}
+        </div>
+      </div>
     </div>
   );
 }

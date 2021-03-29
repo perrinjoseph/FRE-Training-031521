@@ -1,0 +1,33 @@
+body {
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  align-items: center;
+  height: 100%;
+}
+
+.header {
+  background-color: white;
+  height: 61px;
+  width: 100%;
+  position: fixed;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 100;
+}
+
+.header__nav__left > h1 {
+  font-size: 1rem;
+}
+
+.header__nav__right > ul {
+  list-style-type: none;
+  display: flex;
+  color: rgb(138, 138, 138);
+}
+
+.header__nav__right > ul > li {
+  margin: 0px 20px;
+}
