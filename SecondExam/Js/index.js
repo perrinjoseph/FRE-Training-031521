@@ -32,13 +32,19 @@ input.addEventListener('keydown', async (e)=>{
 
     const response = itunesAPI.getAlbums(e.target.value)
     const data = await response;
+    let amt;
     data.forEach((val,index,arr)=>{
         console.log(val.collectionName);
-        const temp = searchTemp(val.collectionName,val.artworkUrl100,arr.length);
-        const header = totalResults(arr.length,e.target.value);
-        container.innerHTML(header);
+        const temp = searchTemp(val.collectionName,val.artworkUrl100);
+        // console.log(val.collectionName,val.artworkUrl100)
         albums.insertAdjacentHTML('afterbegin',temp);
+
+        
+
     })
+    amt = arr.length;
+    const header = totalResults(amt,e.target.value);
+    container.innerHTML=header;
 })
 
 form.addEventListener('submit',(e)=>{
