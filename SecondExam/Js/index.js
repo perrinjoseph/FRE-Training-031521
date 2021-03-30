@@ -36,15 +36,11 @@ input.addEventListener('keydown', async (e)=>{
     data.forEach((val,index,arr)=>{
         console.log(val.collectionName);
         const temp = searchTemp(val.collectionName,val.artworkUrl100);
-        // console.log(val.collectionName,val.artworkUrl100)
         state.push(temp);
         const header = totalResults(arr.length,e.target.value);
         container.innerHTML= header;
-
     })
     albums.innerHTML = state.join(" ");
-    
-    
 })
 
 form.addEventListener('submit',(e)=>{

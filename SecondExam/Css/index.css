@@ -89,15 +89,20 @@
 }
 
 .card__image {
-  width: 220px;
+  width: 100%;
   margin-bottom: 10px;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   grid-gap: 35px;
   margin-top: 30px;
+  justify-content: center;
 }
-/* 
-@media(max-width:) */
+
+@media(max-width:628px){
+    .search__menu > li > input{
+        width: 100%;
+    }
+}
