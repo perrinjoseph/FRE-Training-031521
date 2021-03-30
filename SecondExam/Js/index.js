@@ -1,7 +1,7 @@
 const albums = document.querySelector(".grid");
 const input = document.querySelector(".search__input");
 const form = document.querySelector(".search__form");
-const container = document.querySelector(".container");
+const container = document.querySelector(".main__header");
 
 const itunesAPI = (()=>{
 
@@ -29,7 +29,7 @@ const searchTemp = (name,img)=>{
 }
 
 input.addEventListener('keydown', async (e)=>{
-
+    let state=[];
     const response = itunesAPI.getAlbums(e.target.value)
     const data = await response;
     let amt;
@@ -37,14 +37,14 @@ input.addEventListener('keydown', async (e)=>{
         console.log(val.collectionName);
         const temp = searchTemp(val.collectionName,val.artworkUrl100);
         // console.log(val.collectionName,val.artworkUrl100)
-        albums.insertAdjacentHTML('afterbegin',temp);
-
-        
+        state.push(temp);
+        const header = totalResults(arr.length,e.target.value);
+        container.innerHTML= header;
 
     })
-    amt = arr.length;
-    const header = totalResults(amt,e.target.value);
-    container.innerHTML=header;
+    albums.innerHTML = state.join(" ");
+    
+    
 })
 
 form.addEventListener('submit',(e)=>{
