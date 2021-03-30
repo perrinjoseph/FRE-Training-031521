@@ -17,7 +17,7 @@ const itunesAPI = (()=>{
 })();
 
 const totalResults = (length,value)=>{
-    return `<h1 class="main__header"><span>${length}</span> results for "<span>${value}</span>"</h1>`
+    return `<h1><span>${length}</span> results for "<span>${value}</span>"</h1>`
 }
 
 const searchTemp = (name,img)=>{
