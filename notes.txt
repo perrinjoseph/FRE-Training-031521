@@ -83,4 +83,9 @@
     No overloading in JS classes only over writing so that means the last class with the same name will be invoked. 
 }   
 
+✅  JQuery some Css
+{
+    display none will just hide it from the display. It will also remove the space taken by that element.
+    It is important to know that the tag will still be ther in the dom. 
+}
 
