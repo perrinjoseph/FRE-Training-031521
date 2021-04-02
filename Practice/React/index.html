@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+    <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel"> 
+    //for some reason I am not able to use jquery inside the render. Get more Information 
+    const root = $("#root")
+        ReactDOM.render(<h1>I AM RENDERED</h1>,document.getElementById("root"))
+
+        class List extends React.Component {
+            render(){
+                return (
+                    <div>
+                        <h1>Grocery List</h1>
+                        <ul>
+                            <li>Carrots</li>
+                            <li>Bananas</li>
+                            <li>Chips</li>
+                            <li>Chocolate</li>
+                        </ul>
+                    </div>
+                );
+            }
+        }
+        //this function is used to wrap all the components I created. so this will return one JSX component
+        //that will consist of all the children. We return one because in the .render method for ReactDOM the first 
+        //argument can not have adjacent html tags or elements. That is why I returned one div element.
+        function App(){
+            return (
+                <div>
+                    <h1>I am the App itself (container for all components)</h1>
+                    <List/>
+                </div>
+            )
+        }
+
+
+
+
+        ReactDOM.render(<App/>,document.getElementById("root"))
+        //from this I come to know that props is an object that consist of all the props such as name and age inside one object
+        //is you state a props "prop" for the <App/> component it will consider that as the same prop element as name. so 
+        //when you look at the props property in this console.log object you will see that props will be set to props: {props:"name"}
+        //This means that behind the scenes the function App is basically taking in some rest params and assigning it to a 
+        //props object maybe something like this...
+        // const props = {
+        //     prop1,
+        //     prop2
+        // }
+        console.log(<App name="Perrin" age="23" key="1sAAcbn" />)
+
+        class Car extends React.Component{
+            constructor(){
+                super();
+                this.state = {color:"red"};
+            }
+
+            render(){
+               return  <h2>The Car </h2>
+            }
+        }
+        $("#root").mouseenter(function(){
+            $(this).fadeOut("slow")
+        })
+        
+        $("#root").mousedown(function(){
+            $(this).fadeIn()
+        })
+        
+
+        // 
+       
+
+    </script>
+</body>
+</html>

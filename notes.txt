@@ -87,5 +87,46 @@
 {
     display none will just hide it from the display. It will also remove the space taken by that element.
     It is important to know that the tag will still be ther in the dom. 
+    The fade in basically cahanges the opacity from 1 to 0 and then sets the item to display none. This means the item will no longer be there there on the screen but it will be there in the dom
+    This also means that thee space ocupied will be removed. 
+}
+
+✅  React JSX
+{
+    import is JS module es6
+
+    What is the Package.json?
+    package.json is a JSON file that exists in the root of the Js/node project. It holds metadata relavant to the project
+    and is used to manage the project's dependancies, scripts, libraries/pacakages used version number and a whole lot more. 
+    It holds the dependancies that our application needs in order to work.
+
+    npm i react react-dom? what is this?
+    these are the two things that we need to use for the react libraries methods and features to use react. It also enables us to write in JSX
+
+    package-lock.json what does that do?
+    For example in our pacakge.json we have some versions. These versions refer to the current version number that is used to build the application
+    if incase in the future the library or pacakge updates that can break our code. so pacakge-lock gives us that ability to lock 
+    the version number so that the application will use that version of the library/package
+    The goal of package-lock.json file is to keep track of the exact version of every package that is
+    installed so that a product is 100% reproducible in the same way even if packages are updated by their maintainers.
+
+    What is the nodemodules ??
+    It actually holds all the libraries and the packages that you installed. This folder can get very large depending on how many things you use.
+    package.json can be used to download all the nodemodules files.
+
+    what is babel ?
+    babel is used to transpile your newer JS syntax to older syntax that is accepted by browsers.
+    bable can also convert JSX syntax this can be done with React-preset There are many babel packages to install for a react appplication these are
+
+        1. @babel/core
+            -it is the basic pacakge that is needed to be installed.
+        2. @babel/preset-env
+            -this is used when we need to use the latest versions of JS and we need to transpile to code into brower understood JS. 
+        3. @babel/preset-react
+            -take JSX code into vanila JS code. 
+        4. babel-loader
+            -allows us to connect to webpack. it maybe doing that by first transpiling and then bundling
+
+
 }
 
