@@ -104,6 +104,12 @@
     these are the two things that we need to use for the react libraries methods and features to use react. It also enables us to write in JSX
 
     package-lock.json what does that do?
+
+    -from lecture 
+        -savces the version of dependencies use for the project 
+        the ^ char in from of the version is called dependency version system. Which means its some version system. I need to google.
+        PLJ will tell you what exact version was installed on our side for the application. 
+
     For example in our pacakge.json we have some versions. These versions refer to the current version number that is used to build the application
     if incase in the future the library or pacakge updates that can break our code. so pacakge-lock gives us that ability to lock 
     the version number so that the application will use that version of the library/package
@@ -128,5 +134,68 @@
             -allows us to connect to webpack. it maybe doing that by first transpiling and then bundling
 
 
+}
+
+✅ create-react-app
+{
+    public folder
+    is the folder with the files that we will be sending to the client. 
+
+    Favicon ?
+    favicon is the tab icon 
+
+    %PUBLIC URL% ?
+    this is something related to the webpack.
+
+    manifest.json ?
+    config file providing metadata related to PWA progressive web app.
+    create shorcuts to our application 
+
+    PWA 
+    helps us handel something in offline module with some metadata about the pplication 
+
+    robot.txt?
+    some thing about web robots look it up!!
+
+    npm i will check check the package.lock.json and will acordingly set the version in the package.json. 
+
+    What is Read Me? and then what is .mo for ?
+    .md is a file format you can use a mark down language. It does some formating and makes it look nice and stuff. even html
+    is a markup language. 
+    the read me file helps you to make some documentation stuff. 
+
+    *** Why can you not see the @babel the @webpack and stuff in the package.json in create-react-app??
+    react-script it has dependencies like webpack and babel therefore we do not need to import it. inside react-scriot in node_modules
+    you will find the webpack and the babel and all that stuff. It is hidden behind the scenes.
+
+    what is start scritp?
+    start is to start our development server
+
+    what is build script ?
+    it is used to build an efficient production ready folder that can be used for hosting. It also helps to do some minify.
+    
+    minify?
+    it helps to minimize the size of the file. also like uglify
+
+    test script?
+    it helps us to run test. 
+
+    react-script test is using this test library to run our test file. 
+    app.test.js is what it will run 
+
+    WHAT IS TREE SHAKING ? roll up.js they provide tree shaking. 
+    it is a technology helps us reduce the bundle size.
+    helps us reduce redundant code. 
+    tree shaking will remove all the redundant code. 
+
+    .map inside the build folder for the file extension 
+    this somethign that helps us to convert our minimized file back to a regular file this way we can see it. it is called source map
+    helps convert our production code to development code. It will help us read the code and debug stuff. 
+
+    eject script ?
+    eject will basically remove the default react-script features. so that way you can do some customizations and stuff. 
+
+    dom is a tree structure
+    
 }
 

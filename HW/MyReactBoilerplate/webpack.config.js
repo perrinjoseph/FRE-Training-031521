@@ -1,27 +1,25 @@
-const path = require("path");
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-    mode: "development",
+    mode:"production",
     entry: "./src/index.js",
-    output: {
-        path:path.resolve(__dirname,"dist"),
-        filename:"bundle.[hash].js"
+    output:{
+        path: path.join(__dirname,'/dist'),
+        filename: "bundle.js"
     },
-    resolve: {
-        modules: [__dirname,"src","node_modules"],
-        extensions: ["*",".js",".jsx","tsx",".ts"]
-    },
-    module:{
-        rules:[
+    module: {
+        rules: [
             {
-                test:/\.jsx?$/,
-                exclude:/node_modules/,
-                loader:require.resolve("babel-loader")
-            },
-            {
-                test:/\.css$/,
-                loader:["style-loader","css-loader"]
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
             }
         ]
-    }
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            template:'./src/index.html'
+        })
+    ]
 }
