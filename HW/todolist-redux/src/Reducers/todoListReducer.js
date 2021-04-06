@@ -9,6 +9,12 @@ const todoListReducer = (state = initialState,action)=>{
                 ...state,
                 todoList:[...state.todoList,action.todo]
             }
+        case "DELETE_TODO":
+            return{
+                ...state,
+                todoList:[...state.todoList.filter(val=>val!=action.todo)]
+            }
+        default: return state
     }
 }
 

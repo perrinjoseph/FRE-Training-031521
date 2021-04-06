@@ -1,0 +1,21 @@
+button {
+  width: 30px;
+}
+
+.todoList__task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoList {
+  background-color: burlywood;
+  width: 400px;
+}
+
+.todoList__input {
+  display: flex;
+  justify-content: space-between;
+}
+.todoList__input >input{
+    flex: 1;
+}
