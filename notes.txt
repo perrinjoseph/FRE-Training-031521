@@ -197,5 +197,8 @@
 
     dom is a tree structure
     
+
+    higher order component 
+    a function that takes component as prop and returns a new component
 }
 
