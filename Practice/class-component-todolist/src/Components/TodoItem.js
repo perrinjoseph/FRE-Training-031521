@@ -29,6 +29,7 @@ class TodoItem extends Component {
         }
     }
 
+
     render() {
         return (
             <div style={this.getItemStyle()}>

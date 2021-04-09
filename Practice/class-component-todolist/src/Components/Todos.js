@@ -6,11 +6,15 @@ class Todos extends Component {
 
     constructor(...props){
         super(...props)
+        
     }
 
+    componentDidUpdate(){
+        console.log(this.props.todos.todos)
+    }
 
     render() {
-        return this.props.todos.length>0?this.props.todos.map(todo=>(
+        return this.props.todos.todos.length>0?this.props.todos.todos.map(todo=>(
             <TodoItem  markComplete = {this.props.markComplete} key={todo.id} todo={todo} deleteTodo={this.props.deleteTodo}/>
         )):(<h4>Please Add todos</h4>)
     }

@@ -4,6 +4,9 @@ import Todos from './Components/Todos'
 import {v4 as uuid} from 'uuid';
 import Header from './Components/Layout/Header'
 import AddTodo from './Components/AddTodo'
+import {connect} from 'react-redux'
+import {addTodo,deleteTodo} from './Actions/'
+
 
 class App extends Component {
   state = {
@@ -12,6 +15,7 @@ class App extends Component {
 
   constructor(...props){
     super(...props)
+    
   }
 
   componentDidMount(){
@@ -38,10 +42,13 @@ class App extends Component {
   }
 
   deleteTodo = (e) =>{
-    this.setState({
-      ...this.state,
-      todos:this.state.todos.filter(todo=>todo.id !== e.id)
-    })
+    if(e)
+    this.props.deleteTodo(e)
+    // this.setState({
+    //   ...this.state,
+    //   todos:this.state.todos.filter(todo=>todo.id !== e.id)
+    // })
+    console.log(e)
   }
 
   setTodos = (deserializedData) =>{
@@ -53,10 +60,11 @@ class App extends Component {
 
   addTodo = (e) =>{
     if(e)
-    this.setState({
-      ...this.state,
-      todos:[{id:uuid(),title:e,completed:false,},...this.state.todos]
-    })
+    // this.setState({
+    //   ...this.state,
+    //   todos:[{id:uuid(),title:e,completed:false,},...this.state.todos]
+    // })
+    this.props.addTodo(e);
   }
 
   getStyle(){
@@ -71,10 +79,23 @@ class App extends Component {
       <div style={this.getStyle()} className="app">
         <Header/>
         <AddTodo addTodo = {this.addTodo}/>
-        <Todos todos={this.state.todos} markComplete={this.markComplete} deleteTodo={this.deleteTodo}/>
+        <Todos todos={this.props.todosRedux} markComplete={this.markComplete} deleteTodo={this.deleteTodo}/>
       </div>
     )
   }
 }
 
-export default App;
+const mapStateToProps = (state)=>{
+  return{
+    todosRedux:state.todos
+  }
+}
+
+const maDispatchToProps = ()=>{
+  return{
+    addTodo,
+    deleteTodo,
+  }
+}
+
+export default connect(mapStateToProps,maDispatchToProps())(App);

@@ -33,8 +33,6 @@ function Todolist() {
         
     }
 
-
-
     return (
         <div className="todoList">
             <h1>TODOLIST</h1>
