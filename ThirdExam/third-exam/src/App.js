@@ -7,27 +7,33 @@ export default class App extends Component {
   constructor(...props){
     super(...props)
     this.state={
-      check:false
+      color:""
     }
   }
 
-flipState=()=>{
-  this.setState({
-    check:true
-  })
-}
+  flipState=(e)=>{
+    console.log(e)
+    this.setState({
+      color:e
+    })
+  }
+
+  componentDidUpdate(){
+    console.log(">>>>",this.state)
+  }
+
   render() {
     
     return (
       <div>
-        <Header/>
+        <Header fontColor={this.state.color}/>
         <article className="row">
-          <TextItem set ={"blue"} />
-          <TextItem set ={"black"} />
+          <TextItem flipState = {this.flipState} flip = {this.state.color==="blue"?true:false} set ={"blue"} />
+          <TextItem flipState = {this.flipState} flip = {this.state.color==="black"?true:false} set ={"black"} />
         </article>
         <article className="row">
-          <TextItem  set ={"red"} />
-          <TextItem set ={"green"}/>
+          <TextItem flipState = {this.flipState} flip = {this.state.color==="red"?true:false} set ={"red"} />
+          <TextItem flipState = {this.flipState} flip = {this.state.color==="green"?true:false} set ={"green"}/>
         </article>
       </div>
     )

@@ -2,32 +2,14 @@ import React, { Component } from 'react'
 import './TextItem.css'
 
 export default class TextItem extends Component {
-    state = {
-        active:false
-    }
-
-    constructor(...props){
-        super(...props)
-       
-    }
-
-
-
-    // componentDidUpdate(){
-    //     console.log("I updated")
-    //     console.log(":::::")
-    //     console.log(this.state.active)
-    // }
-
     render() {
-        let btn = this.state.active?this.props.set:"white";
         return (
-            <article className="card" style={{border:`1px solid ${btn}`}}>
+            <article className="card" style={{boxShadow:`5px 10px ${this.props.flip?this.props.set:"white"}`}}>
                 <h1>What is Lorem Ipsum?</h1>
                 <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
-                <button onClick={this.setActive.bind(this)} style={{background:`${this.props.set}`}} className="btn"> Set {this.props.set}</button>
+                <button onClick={this.props.flipState.bind(this,this.props.set)} style={{background:`${this.props.set}`}} className="btn"> Set {this.props.set}</button>
             </article>   
         )
     }
