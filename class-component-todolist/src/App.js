@@ -4,7 +4,7 @@ import Todos from './Components/Todos'
 import Header from './Components/Layout/Header'
 import AddTodo from './Components/AddTodo'
 import {connect} from 'react-redux'
-import {addTodo,deleteTodo,markCompleteAction,setTodos} from './Actions/'
+import {addTodo,deleteTodo,markCompleteAction,setTodos} from './Actions'
 
 
 class App extends Component {
