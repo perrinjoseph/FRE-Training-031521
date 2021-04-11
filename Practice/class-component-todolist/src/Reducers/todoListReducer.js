@@ -14,10 +14,21 @@ const todoListReducer = (state = initialState,action)=>{
             return {
                 ...state,
                 todos:state.todos.filter(todo=>{
-                        console.log("the ID",todo.id)
-                        console.log("THE",action.id)
                         return(todo.id !== action.id)
                     })
+            }
+        case "MARK_COMPLETE":
+            return {
+                ...state,
+                todos: state.todos.map((el)=>{
+                    if(el.id===action.id)el.completed = !el.completed;
+                    return el
+                })
+            }
+        case "SET_TODOS":
+            return{
+                ...state,
+                todos:[...action.todos]
             }
         default:return state;
     }

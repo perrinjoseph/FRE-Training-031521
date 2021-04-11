@@ -4,13 +4,7 @@ import PropType from 'prop-types'
 
 class Todos extends Component {
 
-    constructor(...props){
-        super(...props)
-        
-    }
-
     componentDidUpdate(){
-        console.log(this.props.todos.todos)
     }
 
     render() {

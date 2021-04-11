@@ -19,7 +19,6 @@ export default class AddTodo extends Component {
         this.setState({title:""})
     }
 
-
     render() {
         return (
             <div>

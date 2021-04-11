@@ -1,54 +1,32 @@
-import React, {Component, Profiler} from 'react'
+import React, {Component} from 'react'
 import './App.css';
 import Todos from './Components/Todos'
-import {v4 as uuid} from 'uuid';
 import Header from './Components/Layout/Header'
 import AddTodo from './Components/AddTodo'
 import {connect} from 'react-redux'
-import {addTodo,deleteTodo} from './Actions/'
+import {addTodo,deleteTodo,markCompleteAction,setTodos} from './Actions/'
 
 
 class App extends Component {
-  state = {
-    todos:[]
-  }
-
-  constructor(...props){
-    super(...props)
-    
-  }
-
+  //BEM 
   componentDidMount(){
     const deserializedData = JSON.parse(localStorage.getItem("todos"))
     if(deserializedData)
-    this.setTodos(deserializedData)
+    this.props.setTodos(deserializedData)
   }
 
   componentDidUpdate(){
-    this.serializedData = JSON.stringify(this.state.todos)
+    this.serializedData = JSON.stringify(this.props.todosRedux.todos)
     localStorage.setItem("todos",this.serializedData)
   }
 
   markComplete = (e)=>{
-    this.setState({
-      ...this.state,
-      todos:this.state.todos.map(todo=>{
-        if(todo.id === e.id){
-          todo.completed = !todo.completed
-        }
-        return todo
-      })
-    })
+    this.props.markCompleteAction(e.id);
   }
 
   deleteTodo = (e) =>{
     if(e)
-    this.props.deleteTodo(e)
-    // this.setState({
-    //   ...this.state,
-    //   todos:this.state.todos.filter(todo=>todo.id !== e.id)
-    // })
-    console.log(e)
+    this.props.deleteTodo(e.id)
   }
 
   setTodos = (deserializedData) =>{
@@ -60,10 +38,6 @@ class App extends Component {
 
   addTodo = (e) =>{
     if(e)
-    // this.setState({
-    //   ...this.state,
-    //   todos:[{id:uuid(),title:e,completed:false,},...this.state.todos]
-    // })
     this.props.addTodo(e);
   }
 
@@ -74,7 +48,6 @@ class App extends Component {
   }
   
   render(){
-    //BEM 
     return (
       <div style={this.getStyle()} className="app">
         <Header/>
@@ -95,6 +68,8 @@ const maDispatchToProps = ()=>{
   return{
     addTodo,
     deleteTodo,
+    markCompleteAction,
+    setTodos,
   }
 }
 

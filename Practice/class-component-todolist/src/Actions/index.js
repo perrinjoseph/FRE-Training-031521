@@ -6,10 +6,23 @@ export const addTodo = (todo)=>{
 }
 
 export const deleteTodo = (id)=>{
-    console.log(">>>>>>",id)
     return {
         type:"DELETE_TODO",
         id,
+    }
+}
+
+export const markCompleteAction = (id)=>{
+    return {
+        type:"MARK_COMPLETE",
+        id,
+    }
+}
+
+export const setTodos = (todos)=>{
+    return{
+        type:"SET_TODOS",
+        todos,
     }
 }
 
