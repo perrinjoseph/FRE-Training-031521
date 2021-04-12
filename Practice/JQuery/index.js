@@ -9,7 +9,7 @@ $("input").blur(function(){
 })
 
 const element = $("input")
-console.log(element)
+
 $("p").mouseenter(function(){
     $(this).fadeOut("slow");
 })
