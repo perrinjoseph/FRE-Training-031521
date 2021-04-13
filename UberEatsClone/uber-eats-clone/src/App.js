@@ -33,8 +33,7 @@ class App extends Component {
       menuItems:[],
       clickCart: false,
     }
-    let data = this.getMenuItems();
-    // AllActions.menuActions.setMenu()
+    this.getMenuItems("All");
   }
 
   clickedCuisine=(selected)=>{
@@ -43,20 +42,35 @@ class App extends Component {
       ...this.state,
       selected,
     })
+    this.getMenuItems(selected)
   }
 
-  setMenuItems(data){
-    this.setState({
-      ...this.state,
-      menuItems:[...data]
-    })
-  }
-
-  async getMenuItems(){
-    const response = await axios.get("http://localhost:3000/food");
-    const data = await response.data
-    this.props.setMenu([...data])
-    
+  async getMenuItems(search){
+    console.log(search)
+    if(search==="All"){
+      console.log("I AM EVERYTHING SELECTED")
+      const response = await axios.get("http://localhost:3000/food");
+      const data = await response.data
+      this.props.setMenu([...data])
+    }
+    else if(search ==="Burger"){
+      console.log("I AM ONLY BURGER")
+      const response = await axios.get("http://localhost:3000/food");
+      const data = await response.data
+      this.props.setMenu(data.filter(item=>item.type==="burger"))
+    }    
+    else if(search ==="Soda"){
+      console.log("I AM ONLY BURGER")
+      const response = await axios.get("http://localhost:3000/food");
+      const data = await response.data
+      this.props.setMenu(data.filter(item=>item.type==="soda"))
+    }    
+    else if(search ==="Pizza"){
+      console.log("I AM ONLY BURGER")
+      const response = await axios.get("http://localhost:3000/food");
+      const data = await response.data
+      this.props.setMenu(data.filter(item=>item.type==="pizza"))
+    }    
   }
 
   showCartSideBar=()=>{
