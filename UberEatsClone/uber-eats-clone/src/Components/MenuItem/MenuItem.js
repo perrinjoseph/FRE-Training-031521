@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './MenuItem.css'
 
-export default class Item extends Component {
+export default class MenuItem extends Component {
     render() {
         return (
             <article className="menuItem">
@@ -12,7 +12,7 @@ export default class Item extends Component {
                     <br></br>
                     <span className="menuItem__price">{this.props.price}</span>
                 </p>
-                <button className="menuItem__btnToCart">Add to Cart</button>
+                <button onClick={this.props.addItemToCart.bind(this,this.props.item)} className="menuItem__btnToCart">Add to Cart</button>
             </article>
         )
     }
