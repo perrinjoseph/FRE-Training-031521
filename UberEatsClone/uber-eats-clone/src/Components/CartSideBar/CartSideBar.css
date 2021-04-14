@@ -2,7 +2,6 @@
   position: fixed;
   background-color: white;
   z-index: 100;
-  backdrop-filter: blur(50px);
   height: 720px;
   width: 400px;
   border-radius: 40px;
@@ -31,4 +30,9 @@
 .menu {
   color: var(--color-yellow);
   font-weight: bolder;
+}
+
+hr {
+  border-top: 1px dotted lightgray;
+  margin-top: 30px;
 }

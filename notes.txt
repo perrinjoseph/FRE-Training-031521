@@ -202,3 +202,18 @@
     a function that takes component as prop and returns a new component
 }
 
+✅ HOC
+{
+    Why do we need HOC?
+    we need it to reuse some logic 
+    specifically lifecycle methods and other logic.
+
+    render logic
+    decoupling the logic or some state stuff or the render logic.
+}
+
+✅ Redux {
+    it is a state management tool 
+    It is a library that helps your do some logic
+    it can be used with any native JS not only react.
+}
