@@ -36,3 +36,77 @@ hr {
   border-top: 1px dotted lightgray;
   margin-top: 30px;
 }
+
+.cartSideBar__default {
+  text-align: center;
+  margin-top: 290px;
+  color: var(--color-graytext);
+}
+
+.total-row {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartSideBar__checkoutBtn {
+  border: 2px solid var(--color-yellow);
+  outline: none;
+  border-radius: 5px;
+  width: 160px;
+  line-height: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.btnLoading {
+  height: 50px;
+  width: 50px;
+  border: transparent;
+  border-top: 2px solid var(--color-yellow);
+  border-right: 2px solid var(--color-yellow);
+  border-bottom: 2px solid var(--color-yellow);
+  border-radius: 50%;
+  border-left: 2px solid transparent;
+  animation: mymove 2s infinite;
+  animation-delay: 250ms;
+  background-color: transparent;
+}
+
+.btn-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  background-color: yellowgreen;
+  height: 50px;
+  width: 50px;
+  animation: bounce 0.3s ease-in;
+
+}
+
+@keyframes mymove {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce{
+  0%{
+    transform: scale(0.9);
+  }
+}
+
+

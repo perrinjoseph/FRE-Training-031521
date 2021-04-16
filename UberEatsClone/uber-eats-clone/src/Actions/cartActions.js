@@ -12,6 +12,12 @@ class Actions {
             id,
         }
     }
+
+    clearCart = ()=>{
+        return{
+            type:"CLEAR_CART",
+        }
+    }
 }
 
 const cartActions = new Actions();

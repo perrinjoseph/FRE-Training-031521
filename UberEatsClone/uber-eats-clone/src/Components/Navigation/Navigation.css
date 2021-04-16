@@ -58,7 +58,6 @@
 
 .navigation__item:hover {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
 }
 
 .navigation__search {
@@ -114,9 +113,13 @@
   margin-top: -10px;
 }
 
-.numberItems{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.numberItems {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkTag {
+  text-decoration: none;
 }

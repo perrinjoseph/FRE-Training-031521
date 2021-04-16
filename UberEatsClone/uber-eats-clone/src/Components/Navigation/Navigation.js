@@ -8,6 +8,8 @@ import Message from '@material-ui/icons/MessageOutlined'
 import IconButton from '@material-ui/core/IconButton'
 import CartSideBar from '../CartSideBar/CartSideBar'
 import Cart from '@material-ui/icons/ShoppingCartOutlined'
+import { Link } from 'react-router-dom'
+
 
 
 export default class Navigation extends Component {
@@ -28,18 +30,27 @@ export default class Navigation extends Component {
 
                 <section className="navigation__options">
                     <ul className="navigation__menu">
-                        <li className="navigation__item">
-                            <Home style={{color:"#8B8B8B"}}/>
-                            <span className="item">Home</span>
-                        </li>
-                        <li className="navigation__item">
-                            <Receipt style={{color:"#8B8B8B"}}/>
-                            <span className="item">Bills</span>
-                        </li>
-                        <li className="navigation__item">
-                            <Message style={{color:"#8B8B8B"}}/>
-                            <span className="item">Contact</span>
-                        </li>
+                        <Link className="linkTag" to="/">
+                            <li className="navigation__item">
+                                <Home style={{color:"#8B8B8B"}}/>
+                                <span className="item">Home</span>
+                            </li>
+                        </Link>
+
+                        <Link className="linkTag" to="/bills">
+                            <li className="navigation__item">
+                                <Receipt style={{color:"#8B8B8B"}}/>
+                                <span className="item">Bills</span>
+                            </li>
+                        </Link>
+
+                        <Link className="linkTag" to="/Contact">
+                            <li className="navigation__item">
+                                <Message style={{color:"#8B8B8B"}}/>
+                                <span className="item">Contact</span>
+                            </li>
+                        </Link>
+
                         <li onClick={this.props.showCartSideBar} className="navigation__item">
                             <Cart style={{color:"#8B8B8B"}}/>
                             <div className="notification">
@@ -47,6 +58,7 @@ export default class Navigation extends Component {
                             </div>
                             <span className="item">Cart</span>
                         </li>
+
                     </ul>
                 </section>
             </nav>
