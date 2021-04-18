@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 100;
+
+  width: 100%;
+}
+
+.header__left > img {
+  object-fit: contain;
+  height: 25px;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__middle {
+  display: flex;
+  align-items: center;
+  background-color: rgb(231, 235, 238);
+  flex: 0.7;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.header__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.06rem;
+}
+
+.grayIcon {
+  color: gray;
+}
+
+.header__right {
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: center;
+}

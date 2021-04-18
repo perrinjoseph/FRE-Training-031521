@@ -11,11 +11,17 @@ class App extends Component {
   //BEM 
   componentDidMount(){
     const deserializedData = JSON.parse(localStorage.getItem("todos"))
-    if(deserializedData)
-    this.props.setTodos(deserializedData)
+    if(!deserializedData)
+    fetch("https://jsonplaceholder.typicode.com/users/1/todos")
+    .then(data=> data.json())
+    .then(da=>this.props.setTodos(da))
+    else{
+      this.props.setTodos(deserializedData);
+    }
   }
 
-  componentDidUpdate(){
+  componentDidUpdate(curprops){
+
     this.serializedData = JSON.stringify(this.props.todosRedux.todos)
     localStorage.setItem("todos",this.serializedData)
   }

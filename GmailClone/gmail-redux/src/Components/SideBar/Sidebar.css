@@ -1,0 +1,63 @@
+.sidebar {
+  padding: 20px;
+
+  z-index: 100;
+}
+.sidebar__composeIcon {
+  object-fit: contain;
+  height: 30px;
+}
+
+.sidebar__composeBtn {
+  background-color: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 10px;
+  width: 150px;
+  border-radius: 20px;
+  border: 4px solid white;
+  cursor: pointer;
+}
+
+.sidebar__nav {
+  height: 400px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 240px;
+  border-radius: 20px;
+  border: 4px solid white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.sidebar__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar__item {
+  padding-left: 10px;
+  align-items: center;
+  display: flex;
+  height: 50px;
+  gap: 15px;
+  transition: transform 100ms;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sidebar__item:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: scale(1.06);
+}
+
+.sidebar__item:active {
+  transform: scale(1.02);
+}

@@ -1,0 +1,23 @@
+.gmailBody {
+  border: 20px solid white;
+  background-color: white;
+  width: 100%;
+  border-radius: 40px 0px 0px 0px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+  height: 880px;
+  margin-top: 10px;
+}
+
+.gmailBody::-webkit-scrollbar {
+    display: none;
+  }
+
+.gmailBody__header {
+  width: 100%;
+
+}
+
+.gmailBody__mail {
+  margin-top: 70px;
+}
