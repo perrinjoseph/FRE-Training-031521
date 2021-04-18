@@ -1,0 +1,30 @@
+.mail {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+  justify-content: space-between;
+
+}
+.mail__left {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+
+}
+
+.mail__right {
+  margin-right:10px;
+}
+
+.mail__subject{
+    margin-left: 130px;
+}
+
+.mail:hover {
+  transform: translateX(6px);
+  border-bottom: 1px solid rgb(232, 232, 232);
+}

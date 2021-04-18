@@ -1,6 +1,30 @@
-.emailItem__header{
+.emailItem__header {
+  display: flex;
+  align-items: center;
+}
 
-    display: flex;
-    align-items: center;
+.emailItem__details {
+  margin: 30px;
+}
 
+.profileInfo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+}
+
+.moreInfo {
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+
+.emailItem__message{
+    margin-top: 30px;
+    color: rgb(100, 100, 100);
 }

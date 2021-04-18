@@ -7,4 +7,11 @@
   padding: 10px 0px;
   align-items: center;
   padding-bottom: 20px;
+  z-index: 2;
 }
+
+.linkStyles {
+  text-decoration: none;
+  color: black;
+}
+

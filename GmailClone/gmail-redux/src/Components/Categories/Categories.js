@@ -8,7 +8,7 @@ import {Link, useHistory} from 'react-router-dom'
 
 
 function Categories() {
-    const [clicked,setClicked] = useState("");
+    const [clicked,setClicked] = useState("Primary");
 
     const handelClick=(e)=>{
         setClicked(e)

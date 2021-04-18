@@ -71,9 +71,8 @@ function Sidebar() {
                     <MailIcon className="grayIcon"/>
                     <span className="sidebar__nav__title">All Mail</span>
                 </article>
-
-
             </section>
+
         </nav>
     )
 }
