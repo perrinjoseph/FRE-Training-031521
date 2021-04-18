@@ -9,7 +9,7 @@
 }
 
 .sidebar__composeBtn {
-  background-color: transparent;
+
   outline: none;
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@
   border-radius: 20px;
   border: 4px solid white;
   cursor: pointer;
+  background-color: whitesmoke;
 }
 
 .sidebar__nav {

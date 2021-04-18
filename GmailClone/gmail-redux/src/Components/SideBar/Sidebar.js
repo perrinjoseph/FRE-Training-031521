@@ -12,11 +12,16 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import StarIcon from '@material-ui/icons/Star';
 import MailIcon from '@material-ui/icons/Mail';
+import {useSelector, useDispatch} from 'react-redux'
+import AllActions from '../../Redux/Actions/index'
 
-function Sidebar() {
+function Sidebar(props) {
+    const dispatch = useDispatch();
+
+
     return (
         <nav className="sidebar">
-            <button className="sidebar__composeBtn">
+            <button  onClick={()=>dispatch(AllActions.newMailActions.openMail())} className="sidebar__composeBtn">
                 <img className="sidebar__composeIcon" src={plusIcon}></img>
                 Compose
             </button>

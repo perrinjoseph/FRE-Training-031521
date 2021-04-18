@@ -1,0 +1,76 @@
+.newMail {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  width: 500px;
+  height: 480px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-right: 15px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newMail__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.newMail__menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.close {
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  background-color: rgb(250, 86, 86);
+  cursor: pointer;
+}
+.fullScreen {
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  background-color: rgb(5, 255, 5);
+  cursor: pointer;
+}
+.minimize {
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  background-color: rgb(255, 204, 0);
+  cursor: pointer;
+}
+
+.newMail__body__input {
+  height: 100%;
+  resize: none;
+}
+.newMail__body {
+  height: 100%;
+  padding-top: 30px;
+}
+
+.newMail__to__input,
+.newMail__body__input,
+.newMail__to__subject {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid whitesmoke;
+  outline: none;
+  background-color: transparent;
+}
+.newMail__send {
+  margin-top: 15px;
+}
+
+.minimizeMail{
+    height: 54px;
+}
