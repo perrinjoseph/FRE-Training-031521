@@ -5,7 +5,6 @@
   cursor: pointer;
   transition: all 100ms ease-in;
   justify-content: space-between;
-
 }
 .mail__left {
   display: flex;
@@ -13,15 +12,15 @@
   border-bottom: 1px solid whitesmoke;
   cursor: pointer;
   transition: all 100ms ease-in;
-
 }
 
 .mail__right {
-  margin-right:10px;
+  margin-right: 10px;
 }
 
-.mail__subject{
-    margin-left: 130px;
+.mail__sub {
+  padding-right: 50px;
+  width: 40px;
 }
 
 .mail:hover {
@@ -29,6 +28,14 @@
   border-bottom: 1px solid rgb(232, 232, 232);
 }
 
-.timestamp{
-    font-size: 0.8rem;
+.timestamp {
+  font-size: 0.8rem;
+}
+
+.mail__center {
+  flex: 1;
+}
+
+.left {
+  width: 210px;
 }

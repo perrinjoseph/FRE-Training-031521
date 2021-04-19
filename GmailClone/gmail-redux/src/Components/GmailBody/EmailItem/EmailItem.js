@@ -18,14 +18,16 @@ import AllActions from '../../../Redux/Actions';
 function EmailItem() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const selectMail = useSelector(store=>store.userInformation.selectMail);
+    let selectMail = useSelector(store=>store.userInformation.selectMail);
     
     const unSelectMail = () =>{
         dispatch(AllActions.userActions.unSelectMail())
-        console.log(selectMail)
-    }
+    }   
 
-    console.log(selectMail)
+    if(Object.keys(selectMail).length>0){
+        selectMail = selectMail.body.split(' ').join(' ')
+    }
+    
     return (
         <main className="emailItem">
             <header className="emailItem__header">
@@ -65,7 +67,7 @@ function EmailItem() {
                     
                 </div>
                 <section className="emailItem__message">
-                <p> {selectMail.body}</p>
+                <pre>{selectMail && selectMail}</pre>
                 </section>
 
             </article>

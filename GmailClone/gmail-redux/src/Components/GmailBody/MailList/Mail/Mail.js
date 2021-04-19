@@ -13,11 +13,11 @@ function Mail({mail,body,subject,timestamp}) {
 
     const dispatch = useDispatch();
 
-    const formattedBody = body.split(' ').filter((el,index)=> index<8)
-    if(formattedBody.length==8)formattedBody.push("...")
+    const formattedBody = body.split('').filter((el,index)=> index<110)
+    if(formattedBody.length==110)formattedBody.push("...")
     
-    const formattedSubject = subject.split(' ').filter((el,index)=>index<3)
-    if(formattedSubject.length==3)formattedSubject.push('...')
+    const formattedSubject = subject.split('').filter((el,index)=>index<7)
+    if(formattedSubject.length==7)formattedSubject.push('...')
 
     const selectMail = ()=>{
         dispatch(AllActions.userActions.selectMail(mail))
@@ -30,16 +30,17 @@ function Mail({mail,body,subject,timestamp}) {
                 <IconButton>
                     <StarIcon/>
                 </IconButton>
-                <Link onClick={selectMail} className="linkStyles" to='/mail'>
-                    <span>{formattedSubject.join(' ')}</span>
-                    <span className="mail__subject"> {formattedBody.join(' ').replace(/(\r\n|\n|\r)/gm,"")}</span>
+                <Link onClick={selectMail} className="linkStyles left" to='/mail'>
+                    <span className="mail__sub">{formattedSubject.join('')}</span>
                 </Link>
-                  
-            </div>
+               
+            </div> 
+            <Link onClick={selectMail} className="linkStyles mail__center" to='/mail'>
+                    <span className="mail__subject"> {formattedBody.join('').replace(/(\r\n|\n|\r)/gm,"")}</span>
+            </Link>
             <div className="mail__right">
                 <span className="timestamp">{timestamp}</span>
             </div>
-           
         </article>
     )
 }

@@ -16,7 +16,7 @@ function MailList() {
         const inbox = db.collection("users").where("email","==",user.email)
         .onSnapshot((querySnapshot)=>{
             querySnapshot.forEach((doc)=>{
-                dispatch(AllActions.userActions.setInbox(doc.data().inbox))
+                dispatch(AllActions.userActions.setInbox(doc.data().inbox.reverse()))
             })
         })
     },[])
