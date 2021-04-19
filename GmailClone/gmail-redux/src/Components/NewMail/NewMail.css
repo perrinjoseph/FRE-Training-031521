@@ -71,6 +71,36 @@
   margin-top: 15px;
 }
 
-.minimizeMail{
-    height: 54px;
+.minimizeMail {
+  height: 54px;
+}
+
+.popup {
+  position: fixed;
+  top: 115px;
+  right: -250px;
+  background-color: whitesmoke;
+  height: 40px;
+  width: 250px;
+  border-radius: 10px 0px 0px 10px;
+  display: flex;
+  align-items: center;
+  transition: 600ms ease-in-out;
+  padding: 15px;
+  justify-content: space-between;
+  color: white;
+}
+
+.extend {
+  right: 0;
+}
+
+.not{
+    color: rgb(255, 115, 0);
+    background-color:  rgb(255, 211, 130);
+}
+
+.Sent{
+    color: rgb(0, 175, 0);
+    background-color:  rgb(138, 255, 138);
 }

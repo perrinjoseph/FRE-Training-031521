@@ -1,0 +1,28 @@
+.login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.login__logo {
+  object-fit: contain;
+  width: 300px;
+}
+
+.sidebar__composeBtn:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 24px;
+  transform: scale(1.06);
+}
+
+.sidebar__composeBtn:active {
+  transform: scale(1.02);
+}

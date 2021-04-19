@@ -1,5 +1,5 @@
 const initialValue = {
-    create:true,
+    create:false,
     minimize:false,
 }
 
