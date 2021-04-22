@@ -217,3 +217,14 @@
     It is a library that helps your do some logic
     it can be used with any native JS not only react.
 }
+
+
+✅ HOOKS{
+    React 16.8 is what has hooks!
+    some licensing also changed.
+}
+✅ Type script
+{
+
+    REACT WAS USING PROP TYPES BEFORE 
+}

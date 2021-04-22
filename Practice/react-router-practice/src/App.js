@@ -10,8 +10,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Nav/>
         <Router>
+            <Nav/>
           <Switch>
 
             <Route exact path="/">
