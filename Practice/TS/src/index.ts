@@ -107,6 +107,39 @@ class Animal implements AnimalInterface {
     return this.weight; //do some logic here
   }
 }
-const anAnimal = new Animal("lion", 236, true);
-anAnimal.type = "tiger";
-console.log(anAnimal.type);
+let anAnimal;
+
+const btnType = "primary";
+const btnSize = "lg";
+
+let doubleBandtest = {
+  ["btn-yo"]: true,
+  ["btn-hi"]: !!anAnimal,
+};
+console.log(">>>", doubleBandtest);
+
+type ClassNamesArguments = string | { [aKey: string]: boolean };
+const classNames = (...args: ClassNamesArguments[]): string => {
+  let output: string[] = [];
+  args.forEach((el, arr) => {
+    if (typeof el === "string") {
+      output.push(el);
+    } else {
+      if (Object.keys(el).length > 0) {
+        const allkeys: string[] = Object.keys(el);
+        allkeys.forEach((val, arr) => {
+          if (el[val] === true) {
+            output.push(val);
+          }
+        });
+      }
+    }
+  });
+  return output.join(" ");
+};
+
+const response = classNames("btn", {
+  ["btn-default"]: true,
+  ["btn-lg"]: true,
+});
+console.log(response);
