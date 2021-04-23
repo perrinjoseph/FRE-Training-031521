@@ -1,0 +1,26 @@
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.input-default {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 1.3rem;
+}
+
+.input-editedable {
+  font-size: 1.3rem;
+}
+
+.input-complete {
+  text-decoration: line-through;
+}
