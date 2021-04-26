@@ -223,8 +223,113 @@
     React 16.8 is what has hooks!
     some licensing also changed.
 }
+
 ✅ Type script
 {
-
+    disable an ancor tag?
+    picture is in phone
     REACT WAS USING PROP TYPES BEFORE 
+}
+
+✅ Testing
+{
+    Why do we need testing?
+    We write testing to make some certain things happen. to make sure some certain logic
+    is happening.
+    BDD is something you can say at the interview.
+    We are going to do unit testing for react.
+
+    What is TDT?
+    Test driven Tevelopment. 
+    is relating to software development testing not for front end.
+
+    BDT behaivior driven tsting
+    is relating to software development testing not really for.
+    You hvave to make sure your test cases are based on user cenairio. 
+    like for example user has to be logged in after this.
+    it is for normal pepole to undersatnd. 
+
+    which testing library to use?
+    use the testing library given to you from cra 
+
+    how to write the test cases?
+    App.test.ts....
+    open terminal and run the test by doing.. npm run test (react-scripts test)
+    it uses webpack config to read all files under src and it will check for .test.tsx. or some sort of test extension
+    react was originially using jsmin for testing so we can use .spec.
+    test() is a function 
+    jest.It is proving thise function.
+    or you can called it it()
+
+    test()
+    expect('test').toBe('test)
+
+
+    you can also use___________________
+    The render() helps us do something known as shallow testing.
+    to use that we should do import {render,fireEvent} from '@testing-library/react'
+    
+    you can us fireevent to check something like on click.
+
+    describe('button',()=>{
+        it('render default btn',()=>{
+            
+        })
+
+        it('render corrent btn based on different props
+        ',()=>{
+
+            const btnProps = {
+                onClick: jest.fn(),
+            }
+
+            const wrapper = render(<Button {...btnProps}>Default Button</Button>);
+            const element = wrapper.queryByTest('Default Button) as HTMLElement ---- this will basically return anything even null as a HTMLElement
+            expect(element).toBeInTheDocument()
+tobeinthe document helps us see if the element is in te wrapper or in the element or somehting like that.
+      //this tagName return in upper case form  so...    expect(element:tagName).toBe('button')
+        //change the toBe('BUTTON')
+        ..there is something called toEqual to check the value of the Object
+
+        expect(element).toHaveClass('btn btn-ls btn default')
+        fireEvent.click(element);
+        expect(btnProps.onClick).toHaveBeenCalledTimes(1);
+        })
+    })
+
+    there are two type of testing JEST BDT
+    what kind of testing? we were doing osmethign like unit test
+    End to end testing it will test both the UI and the back end. 
+    cyprise can be used for E 2 E testing. 
+    Unit testing is the baseline though.
+
+    testing coverage should be around 70-80
+    what is 20-80 rule 20% of effort to finish 80% of funtionality. 
+    for the remaining 20% it will take us 80% of efforts. 
+
+    we should use 70-80 rule for testing coverage. 
+
+    what is snapshot testing?
+    it is a hot topic. !!!!
+    it is a part of react testing API
+    we have render function which we use the destructuring to get container and some text
+    snapshot is just somethign that is going to take a string that is used to 
+    represent a tag then match the snapshot with some functinon
+    it iell kinda give us like a snapshot of the entire tag. So when there is a 
+    change it will show us another snapchot and then we can see if the layout 
+    changes in anyway. 
+
+    these changes show up as some sorrta error, but that isnt an 
+    error it just shows developers waht may have cahnged.
+    we can update 'w' on the snap shot to allow for updating failing snapshot 
+    interactively. 
+}
+
+Git hub 
+{   
+    merge a feathure branch into the master branch 
+    we would porbably need to merge to the development branch.
+    in git hub it is called pull request.
+    some rules like peer reviews before merging to master branch
+    from owner.
 }
