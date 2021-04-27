@@ -48,27 +48,29 @@ class App extends Component {
     this.getMenuItems(selected)
   }
   //this code can be made more efficient but for understanding purpose I will use this.
+  //https://raw.githubusercontent.com/perrinjoseph/JSONProjectsIT315/master/food.json
   async getMenuItems(search){
     console.log(search)
     if(search==="All"){
-      const response = await axios.get("http://localhost:3000/food");
-      const data = await response.data
-      this.props.setMenu([...data])
+      const response = await axios.get("https://raw.githubusercontent.com/perrinjoseph/JSONProjectsIT315/master/food.json");
+      const {food} = await response.data
+      console.log(food)
+      this.props.setMenu([...food])
     }
     else if(search ==="Burger"){
-      const response = await axios.get("http://localhost:3000/food");
-      const data = await response.data
-      this.props.setMenu(data.filter(item=>item.type==="burger"))
+      const response = await axios.get("https://raw.githubusercontent.com/perrinjoseph/JSONProjectsIT315/master/food.json");
+      const {food }= await response.data
+      this.props.setMenu(food.filter(item=>item.type==="burger"))
     }    
     else if(search ==="Soda"){
-      const response = await axios.get("http://localhost:3000/food");
-      const data = await response.data
-      this.props.setMenu(data.filter(item=>item.type==="soda"))
+      const response = await axios.get("https://raw.githubusercontent.com/perrinjoseph/JSONProjectsIT315/master/food.json");
+      const {food} = await response.data
+      this.props.setMenu(food.filter(item=>item.type==="soda"))
     }    
     else if(search ==="Pizza"){
-      const response = await axios.get("http://localhost:3000/food");
-      const data = await response.data
-      this.props.setMenu(data.filter(item=>item.type==="pizza"))
+      const response = await axios.get("https://raw.githubusercontent.com/perrinjoseph/JSONProjectsIT315/master/food.json");
+      const {food} = await response.data
+      this.props.setMenu(food.filter(item=>item.type==="pizza"))
     }    
   }
 

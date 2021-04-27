@@ -325,11 +325,25 @@ tobeinthe document helps us see if the element is in te wrapper or in the elemen
     interactively. 
 }
 
-Git hub 
+✅ Git hub 
 {   
     merge a feathure branch into the master branch 
     we would porbably need to merge to the development branch.
     in git hub it is called pull request.
     some rules like peer reviews before merging to master branch
     from owner.
+}
+
+✅ Create the star rating component
+{
+    under the components just put a star rating and then in that create the tsx file the scss file and some test stuff 
+    and thats it.
+
+    1. create folder star component
+    2.  then create the files and the config will do the job.
+}
+
+✅  typescripe additional notes 
+{
+    some git pull stuff will give you something 
 }
