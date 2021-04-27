@@ -343,7 +343,147 @@ tobeinthe document helps us see if the element is in te wrapper or in the elemen
     2.  then create the files and the config will do the job.
 }
 
-✅  typescripe additional notes 
+✅  how to publish repo to npm registery 
 {
-    some git pull stuff will give you something 
+    for the library we do not need the index.html right? yes we dont because we are building a library.
+    So what do we do in this case?
+
+    when we use the import ..... from '....'
+    what happens?
+    it will try to file the file and import button from that export. 
+
+    So what does this mean?
+    There are two type of  paths the absolute and the relative path. so when we use the absolute path it will look into the node_modules, if nothing in there then it 
+    will look in your global modules. 
+    yourn ode envirobment will take a look at your package.json and it will try to see which file is your main file. In the package.json
+    you can see something as main: and that is the entry point for your nodejs. If you are going to import
+    and export anything then the "module" should have the entry file for the import and the export. 
+
+    this module and this main are the pacakge.json file properties. 
+    
+    what is treeshaking ?
+    it is like a removed unused code. Our webpack is using a library called Rollup.js as an internal bundeler to provide 
+    us the ability of tree shaking
+
+    the way we can use this roll up is by enabling your webpack to use es modules taht way 
+    you can use import {...} from '...' so this way we dont import the entire file
+    we can use only that one thing that we need. 
+
+    the new webpack provides us some tree shaking with the help of es modules. 
+    provide the webpack something related to the import export things so like provide the 
+
+    webpack some es module instructions and then your webpack will use rollup to help you figure out which file you are USING
+    and which you arent. 
+
+    lazy loading?
+    lazy loading i for single page applications. Because we use javascript to load everything. That means our JS
+    file at first can be huge so when our browser first loads our JS it is goign to take some time. Inorder to fix this problem
+    we use something known as lazy loading. This means we provude it the first thing that is needed and then later we provide the other parts of
+    the file. 
+
+    first we need to transpile our TS code to JS and the bundling will be done by the user with their own webpack.
 }
+
+✅ TSCONFIG.JSON only some basic explaination!
+{
+    what is target ?
+    we are going to transpile our typescript into ES5 
+    alowJs?
+    would you like to use some JS also in your TS file?
+    skip lib check? 
+    no idea
+
+    allowSYnthetic default imports: true!!
+
+    module???
+    this module is related to module system or the way inwhich we can do the modeling in JS
+    the most classic way for using modules in our native app is we use use a global variable and 
+    wrap it with somethign known as an iffe and provide some private scope. this is like 6-7 years ago. 
+    later on there is somethign called commonJs 
+
+    what is comonJs 
+    the node is originaly supported by commonJs. 
+
+    module in here basically represents one file in our project. 
+    for the moduern concepts we use module to do integration between different files "modules"
+    this is the module system.
+
+    other module systems
+    AMD is also another type of way. 
+    UDM is also another one.
+    System.js is also another
+    ESNExt is also one
+
+    ESNEXT is good enough. 
+
+    mduleResolution shoudl be set to node. to use the run command or somethign...
+    
+    jsx? 
+    this jsx is because we are using it in react so we set it to react. JSX is nothing but syntax sugar!!!
+    it helps us to do something like creating React.createElement. its some syntax sugar for that. 
+
+    include means which file we are going to compile using typescript.
+    it is everythign under src...
+
+    but then we have so many files under src so do we want everything to be transpiled toproduction?
+    no!!!
+
+    so we use somethign called exclude. 
+    exclude will help us exclude the files for transpile producton code.
+
+    next is where do we output?
+    its called outDir property: this is where we want to output our result. 
+
+    is semantic UI it used the folder called dist.
+    the outDir can be somethign like: "dist"
+
+    to use the tsc to config with your custom configureation we use 
+    "tsc -p tsconfig.lib.json " this file is the custom config we gave TSC
+    you can add this to the scripts. 
+    when he did this nothing changed. This seems like somthin is not working. 
+
+    The problem was.....
+    the reason is because in our tSconfig we neede to use "outDir" and make it a relative path like "./dist"
+    Still nothing changedd though!!!!!
+    
+    smothign is not working. WHY?????
+    I thing the problem is we set the NoEmit to true!
+    now when we change that it will output the file. So change that to false. 
+
+    IT means that we donot want a Single folder.
+    first we clear up the app more. so we remove the App.tsx 
+    we remove the serviceworker file also 
+    so we remove the call from the index.tsx also. 
+    then the setup test.js remove that also. Because the end user
+    dose not need the tests. but we need the files in our github 
+    so what we do is we go to our exclude and we put somethign in the exclude that weill remove from "src/setupTests.js" for example.
+
+    No in the index.js we remove all the stuff inside this file and then we do the Import and export stuff
+    so import Button from'./' somethwew and then we export the button. 
+    some error can come so we can do both together like this export {Button} frmo './'
+    when you look at the semantic UI they do somethign like this imprt BUtton from './components/button'
+    but they dont say button.js after that because they use the index.js file 
+
+    you can say Export {default} fom './Bnutton';
+    this can combine the two lines into one line. 
+    but lets make it simpelle and use 
+
+    import _default from './utton'
+    export {_default as default};
+
+    now in the index.js we are export {default as Button} from './Components/Button'
+
+    Before that we realize taht there is also a utils so we do not need to provide that to the user. 
+    if we make a change to the files and we want to rebuild the project again how should we do that?
+    so we have to do that from the command line. 
+
+    So we will do a new script call it "clean" : rm -rf ./dist  , this shoudl remove that dist folder. 
+    we used rf and not f because ../dist is a dir and we need to recurrisivle delete using rf.
+    btw this is only for the MACBOOK!!!!
+
+    if youre using windows you can use a library called ram rimraf 
+    it is unix command that will remove some stuff for node. and node is a cross platform language. 
+    
+
+}
+
