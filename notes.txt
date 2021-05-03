@@ -483,7 +483,194 @@ tobeinthe document helps us see if the element is in te wrapper or in the elemen
 
     if youre using windows you can use a library called ram rimraf 
     it is unix command that will remove some stuff for node. and node is a cross platform language. 
+
+    so you can use this npm i rimraf. and then we can use this to delte some stuff.
+    rimraf ./dist
+    this weil this will clean up our ./dist folder .and then we can rebuild our folder. 
+    that why rimraf is really important.! 
+    its very easy to use and we do not need any linux commands. 
+
+    a couple more things is sometimes you will need to do the type file with all the types of each files. thiss basically allows us to use the type file. 
+    this file is index.d.ts and inside this we will have all the types created for us automatically.
+
+    some question why are we removing the dist folder???
+    because if you do not remove then everything that the TSC will do is overite everythig. so later on if I have already removed the Button component 
+    and then I run the build then the button will still be there (THIS MAKES NO SENSE THOUGH DO RESEARCH)
+}
+
+  
+✅ NPM link
+{
+    now we are under our root dir
+    if we use NPm link with no parameters it will do somethign
     
+    this is used to fake a node_modules stuff and 
+    but this is in the global node_modules not only in this folder. 
+    npm link will create like a mirror library called pat-ui and this link is related to your project that you are using rn.
+    so now you can use the import .... 'pat-ui';
+    so now to use this we will do npm link but with a parameter 
+    and we will say the lib we need
+
+    so .... npm link pat-ui 
+    it will create a local pacakage dependencies to 
+    it will create the folder and link it to the global folder
+    it is called symbolic link. It kinda fakes the npm library so we dont need to upload it to npm.
+    we usually use this for like test stuff.
+
+
+    but when we use the npm start we will get some module error because in the package.json we havent provided the file 
+    so we will provide somethign called main in our development library.. not our project!!
+    and in the main we will put something: "./dist/index.js"
+    and then we will also need to provide somethign like module. 
+    so we will do module: "./dist/index.js";
+    then we can alos do somethign like "type":"./dist/index.d.ts" so that we can tell the package.json there is 
+    somthign like the types file.
+    not we will again do the npm run build in our library testing. and then when we go back to our project we will see the button 
+    and no errors. 
+
+    but the problem is we wont see the CSS.
+    we basically have to provide the css file. It should generate based on that css file. 
+    HOW CAN WE DO THAT???
+
+    fortypescript we need to import TS similar with sass with need to do somethgin known as node-sass
+    so in our deve project we alreay installed node-sass so how can we now transpile that sass so it will come with our library?
+    so we will make another scirpt and call it build-css-lib and then we can run node-sass ./src/styles/index.scss ./dist/index.css 
+    the first one is where it is and the next is wherer in the library we need to save that file. 
+
+    now we do the npm run bild. It will remove the dist folder and then run the create the build and then tiw ill running
+    node-sass and then in the folder structure you will se the index.css
+
+    now in our project! we can import the styles like this 
+    import 'pat-ui/dist/index.css';
+
+    if you are using two styles LIBRARIES it is not good
+    try to use one. 
+    
+    now we can pass the btnType for example and give the "primary"
+
+    1. npm addUser 
+    put User name and password
+    and then put the email
+    this will login in on the npm registery from your terminal
+
+    then do npm publish.
+
+    we needd to optimize our dependencies so remove some unessacry dependencies because when the 
+    user does npm i it will also deownload all the dependencies on the user end.
+    So we need to put it on the dev-dependecies
+    Everything here will not be downalodede to the end user
+    evern the typescript and the rimraf is alsosomething  related to the command line
+    so we will out it in the devDependencies. 
+    what about the react? react-dom? react-scripts?
+    it will help the end user install the react and all that stuff...
+    so its importatnt to know that our library needs react. So that means that our dependencies reelated to the react
+    is a core dependencies. you can see that the CRA will download the react for you normally. 
+    there is somethign known as peerDependencies this is basically in order to use my library you need to make sure you 
+    have already installed the given libraries.
+    so we need to make sure that we have the peerDependencies to make sure that the user will have these
+    pree requirements. If the end user doesnot have these then it will download it for them. 
+
+    there is a script we need to setup is called pre 
+    for example prePublishOnly. before we run the prePublishOnly we want to run another script. so if you are going to run build
+    something elase will run first.
+    this can help prevent errors while publishing our npm libraries. 
+    
+    first thinf is in the package.json change private to false;
+    then lets do some "description": "react Component Library",
+    "license": "MIT",
+    keywords: ["components library"],   ---- this is somethign related to the SEO
+    homepage: "put the github page"
+    repository: {
+        type:git
+        url:"asdfasdfasdf
+    }
+    file: [
+        "dist",
+    ]
 
 }
 
+✅ Lint
+{
+    It is a coding format and a coding style. 
+    so before we push everythign we need to check somethign with lint to see if all code is following a standard.
+    google cra lint
+    you need to run some typescript lint that is the goal!!
+    if we use prettier then eslint is kinda pointless because prettier will do it for you.
+    but the problem is prettier is locally so it wont fix the standard code for eveyone. 
+
+    eslint rules
+    semi error is the semicolon error,
+    you can config the file to do certain tasks. 
+
+    "rulese": {
+        "quotes": ['error','double'];
+    }
+}
+
+✅ CICD
+{
+
+    SOME CHECKS HAVENT COMPLETD YET??? 
+    This means that our travis CI is still working it did not complete al its tasks. 
+
+    We are going to do some automation
+    because we will have to continuously run those scripts and what if you forget to run one script for example eslint??
+    this is why we have some automation 
+
+    Jinkins?
+    CICD server that will help us to do somethign. 
+    It watches our git to see if there are changes.
+    If there is a change our CICD server will help us run the test tun the link stuff 
+
+    git hub has a ci it sets up your server so you dont need to do anythnig 
+    git hub has Travis CI.
+    sign in with git hub
+    say yes to watching our repo.
+    this will help us watch our repo.
+    any changes like pushes
+    will trigger some specific script in your travis ci.
+
+    inoirder to use travis ci you need to create a file under your projet. .travis.yml
+    travis CI helps us use DOCKER! --- look docker up.
+    helps us run like a cloud terminal.
+
+    first  thing it does.
+    you can see it looks like a terminal from docker kinda...
+
+    it goes git clone...
+    nvm install 10... -----because we gave it the configureation
+    then it does npm ci... ----- npm ci is similar to npm i ... the difference is npm i install all dependencies on your project but npm ci
+    install all the dependencies from the package-lock.json
+
+    then it does script phase which is npm test....
+    
+
+________configuration tips
+    1. language first.
+    node -v to get the version ...
+    2. install...
+    3. script...
+
+
+
+
+
+    Continuous Integration ??
+    this concept is related to version control system where we are making continuous merging to the master branch.
+
+    COntinuous Delivery,
+    We are going to 
+
+}
+
+github pages
+{
+    it is a server by github for deployement 
+    you can create a doc folder and load the master branch. 
+    it will load all the filed form the branch to that folder in that link. 
+    
+}
+
+Moved the file to the HDD. 
+Check if it works.
